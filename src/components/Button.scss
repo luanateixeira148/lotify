@@ -3,12 +3,14 @@
   border: none;
   height: 30px;
   width: 30px;
-
   color: white;
 }
 
-.button--save {
-  background-color: #00AB5E;
+.button--add {
+  height: 100px;
+  width: 100px;
+  background-color: #FCBC40;
+  font-size: 50px; //defines the icon size
 }
 
 .button--delete {
@@ -19,10 +21,6 @@
   background-color: #FCE058;
 }
 
-.button--add {
-  height: 100px;
-  width: 100px;
-  background-color: #FCBC40;
-  font-size: xx-large;
-  font-weight: bold;
+.button--save {
+  background-color: #00AB5E;
 }
