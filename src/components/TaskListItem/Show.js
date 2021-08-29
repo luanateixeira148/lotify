@@ -21,37 +21,39 @@ export default function Show(props) {
 
   // defines if the task status is true or false, and return show or checked.
   //show and checked are the className used to define the css
-  const defineTaskClass = function() {
+  const defineTaskClass = function(propsStatus) {
     let status;
-    if (tempData[0].status === false) {
+    if (propsStatus === false) {
       status = "show";
     }
-    if (tempData[0].status === true) {
+    if (propsStatus === true) {
       status = "checked";
     }
     return status;
   }
 
   // defines if the task status. If true, returns the checked input. If false, returns unchecked input
-  const defineTaskStatus = function () {
+  const defineTaskStatus = function(propsStatus) {
     let status;
-    if (tempData[0].status === false) {
+    if (propsStatus === false) {
       status = <input type='checkbox' id='task-checkbox' />;
     }
-    if (tempData[0].status === true) {
+    if (propsStatus === true) {
       status = <input type='checkbox' id='task-checkbox' checked/>;
     }
     return status;
   }
 
   return (
-    <div className={defineTaskClass()}>
+    <div className={defineTaskClass(props.status)}>
       <form>
-          {defineTaskStatus()}
-          <label for="task-checkbox">{tempData[0].description}</label>
+          {defineTaskStatus(props.status)}
+          <label for="task-checkbox">
+            {props.description}
+          </label>
       </form>
       <img
-        src={tempData[0].logo_url}
+        src={props.logo_url}
       />
     </div>
   );
