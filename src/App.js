@@ -7,23 +7,23 @@ import React from 'react';
 
 function App() {
 
-useEffect(() => {
+// useEffect(() => {
     
 
-  axios.get('/')
-  .then(function (response) {
-    // handle success
-    console.log(response);
-  })
-  .catch(function (error) {
-    // handle error
-    console.log(error);
-  })
-  .then(function () {
-    // always executed
-  });
+//   axios.get('/')
+//   .then(function (response) {
+//     // handle success
+//     console.log(response);
+//   })
+//   .catch(function (error) {
+//     // handle error
+//     console.log(error);
+//   })
+//   .then(function () {
+//     // always executed
+//   });
   
-}, [])
+// }, [])
 
   return (
     <div className="App">
@@ -34,7 +34,7 @@ useEffect(() => {
         </p>
         <a
           className="App-link"
-          href="/test"
+          // href="/test"
           target="_blank"
           rel="noopener noreferrer"
         >
