@@ -7,6 +7,7 @@ import React from 'react';
 /* Components */
 import Button from "./components/Button"
 import Show from './components/TaskListItem/Show';
+import Checked from './components/TaskListItem/Checked';
 
 
 function App() {
@@ -21,6 +22,8 @@ function App() {
       <h1>TaskItem</h1>
       <h2>Show</h2>
       <Show />
+      <h2>Checked</h2>
+      <Checked />
     </div>
   );
 }
