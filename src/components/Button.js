@@ -7,7 +7,8 @@ export default function Button(props) {
   const buttonClass = classNames("button", {
     "button--save": props.save,
     "button--delete": props.delete,
-    "button--edit": props.edit
+    "button--edit": props.edit,
+    "button--add": props.add
   });
 
   return (
@@ -16,8 +17,7 @@ export default function Button(props) {
       onClick={props.onClick}
       disabled={props.disabled}
     >
-      {/* {props.children} */}
-      -
+      {props.children}
     </button>
   );
 
