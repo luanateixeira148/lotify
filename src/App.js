@@ -15,20 +15,6 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <br /><br />
-      <h1>Buttons</h1>
-      <Button save>--</Button>
-      <Button delete>--</Button>
-      <Button edit>--</Button>
-      <Button add>+</Button>
-      <br /><br />
-      <h1>TaskItem</h1>
-      <h2>Show</h2>
-      <Show />
-      <h2>Checked</h2>
-      <Checked />
-      <h2>Form</h2>
-      <Form />
     </div>
   );
 }
