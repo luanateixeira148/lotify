@@ -1,0 +1,26 @@
+.show {
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: left;
+
+  width: 380px;
+  height: 60px;
+  background: #FEFEFE;
+  border: 1px solid #D3D3D3;
+  box-sizing: border-box;
+  border-radius: 6px;
+  padding: 15px;
+
+  label {
+    font-size: 18px;
+    padding-left: 15px;
+  }
+
+  img {
+
+  }
+
+}
+
