@@ -8,6 +8,7 @@ import React from 'react';
 import Button from "./components/Button"
 import Show from './components/TaskListItem/Show';
 import Checked from './components/TaskListItem/Checked';
+import Form from './components/TaskListItem/Form';
 
 
 function App() {
@@ -24,6 +25,8 @@ function App() {
       <Show />
       <h2>Checked</h2>
       <Checked />
+      <h2>Form</h2>
+      <Form />
     </div>
   );
 }
