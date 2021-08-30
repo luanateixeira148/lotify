@@ -68,12 +68,17 @@
 
 .form {
 
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
   width: 380px;
-  height: 60px;
   background: #FEFEFE;
-  border: 1px solid #D3D3D3;
+  border: 1px solid #6b6b50;
   box-sizing: border-box;
   border-radius: 6px;
+  margin: 10px 0 0 0;
   padding: 15px;
 
   form {
@@ -81,14 +86,20 @@
     flex-direction: column;
     width: 60%;
 
-    input {
+    input.description {
       outline: 0;
       border-width: 0 0 2px;
       border-color: gray;
     }
 
-    input:focus {
+    input.description:focus {
       border-color: blue;
+    }
+
+    input.location {
+      outline: 0;
+      border-width: 0;
+      border-color: gray;
     }
 
   }
