@@ -1,4 +1,4 @@
-import './App.css';
+import './App.scss';
 import React from 'react';
 
 /* Components */
@@ -14,6 +14,9 @@ function App() {
     <div className="App">
       <Header />
       <TaskList />
+      <div id="footer">
+        <Button add />
+      </div>
     </div>
   );
 }
