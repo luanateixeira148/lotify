@@ -1,21 +1,7 @@
 import React from 'react';
 import "./styles.scss";
+import Button from "../Button";
 const classNames = require('classnames');
-
-const tempData = [
-  {
-    id: 1,
-    description: "Return Dress",
-    status: false,
-    location_id: 6,
-    device_id: 6,
-    latitude: 49.22720599357389,
-    longitude: -123.0034522066196,
-    name: "Best Buy Station Square",
-    address: "Station Square, 6200 McKay Ave Unit 200, Burnaby, BC V5H 4L7",
-    logo_url: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Best_Buy_Logo.svg/1280px-Best_Buy_Logo.svg.png"
-  }
-]
 
 export default function Show(props) {
 
@@ -55,6 +41,8 @@ export default function Show(props) {
       <img
         src={props.logo_url}
       />
+      <Button edit />
+      <Button delete />
     </div>
   );
 
