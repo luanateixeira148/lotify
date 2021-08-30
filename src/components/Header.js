@@ -1,6 +1,5 @@
 import React from 'react';
 import "./Header.scss";
-const classNames = require('classnames');
 
 export default function Header(props) {
 
