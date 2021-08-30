@@ -1,20 +1,23 @@
 import React from 'react';
 import "./styles.scss";
+import Button from "../Button";
 const classNames = require('classnames');
 
-// THIS FILE IS NOT BEING UPDATED. THE CHANGES ARE BEING MADE BASED ON THE STATE OF THE SHOW COMPONENT.
-
-export default function Checked(props) {
+export default function Show(props) {
 
   return (
-    <div className="checked">
+    <div className='checked'>
       <form>
-          <input type="checkbox" id="task-checkbox" checked/>
-          <label for="task-checkbox">Pickup prescription</label>
+          <input type='checkbox' id='task-checkbox' checked/>
+          <label for="task-checkbox">
+            {props.description}
+          </label>
       </form>
       <img
-        src="images/shoppers.png"
+        src={props.logo_url}
       />
+      <Button edit />
+      <Button delete />
     </div>
   );
 

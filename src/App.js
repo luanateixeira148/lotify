@@ -1,5 +1,5 @@
 import './App.scss';
-import React from 'react';
+import React, { useState } from 'react';
 
 /* Components */
 import Button from "./components/Button"

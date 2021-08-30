@@ -1,6 +1,7 @@
 import React from 'react';
 import "./TaskList.scss";
 import Show from './TaskListItem/Show';
+import Checked from './TaskListItem/Checked';
 
 const classNames = require('classnames');
 
@@ -73,7 +74,7 @@ export default function TaskList(props) {
       {/* maps over tasks and returns only checked ones */}
       <ul>
         {tasks.map(task => task.status === true && (
-          <Show
+          <Checked
             status={task.status}
             description={task.description}
             logo_url={task.logo_url}
