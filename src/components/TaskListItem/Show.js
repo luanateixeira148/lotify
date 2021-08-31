@@ -6,6 +6,12 @@ const classNames = require('classnames');
 
 export default function Show(props) {
 
+  const handleClick = (id) => {
+    console.log('delete buttonw as clicked');
+    return axios
+      .delete(`http://localhost:8080/api/tasks/${id}`)
+  }
+
   return (
     
     <div className="show">
@@ -19,7 +25,7 @@ export default function Show(props) {
         src={props.logo_url}
       />
       <Button edit />
-      <Button delete />
+      <Button delete onClick={() => handleClick(props.id)} />
     </div>
   );
 
