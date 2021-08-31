@@ -15,9 +15,9 @@ function App() {
       <Header />
       <Form />
       <TaskList />
-      <div id="footer">
+      {/* <div id="footer">
         <Button add />
-      </div>
+      </div> */}
     </div>
   );
 }
