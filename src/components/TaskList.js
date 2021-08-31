@@ -75,6 +75,7 @@ export default function TaskList(props) {
         {tasks.map(task => task.status === false && (
           <Show
             key={task.id}
+            id={task.id}
             status={task.status}
             description={task.description}
             logo_url={task.logo_url}

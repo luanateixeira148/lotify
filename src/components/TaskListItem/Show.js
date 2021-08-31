@@ -1,11 +1,13 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import "./styles.scss";
 import Button from "../Button";
+import axios from 'axios';
 const classNames = require('classnames');
 
 export default function Show(props) {
 
   return (
+    
     <div className="show">
       <form>
           <input type='checkbox' id='task-checkbox' />
