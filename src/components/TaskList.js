@@ -68,24 +68,65 @@ export default function TaskList(props) {
 
   }, [])
 
+  const updateStatus = function (taskId) {
+    // get the day object
+    const taskObj = tasks.find(task => task.id === taskId)
+    //initialize the num spots to zerio
+    let status;
+    // if an interview does not exist, increase the number of spots remainin
+    (taskObj.status === false) ? taskObj.status = true : taskObj.status = false
+    
+    return axios.put('http://localhost:8080/api/tasks/' + taskId, taskObj)
+    .then((res) => {
+      console.log(res);
+      // const days = updateSpots(state.day, state.days, taskOb);
+      // setState({...state, appointments, days});
+    }) 
+  };
+
+  const handleClick = () => {
+    console.log('Show component was clicked.');
+  }
+
+  const toggleCheckbox = (id) => {
+    let taskFromStates = tasks
+    for (let i = 0; i < taskFromStates.length; i++) {
+      const taskObj = taskFromStates[i];
+      if (taskObj.id === id) {
+        taskFromStates[i].status = !taskFromStates[i].status 
+      }
+    }
+    setTasks([...taskFromStates])
+  }
+
+  const getCheckedTasks = () => {
+    return tasks.filter(task => task.status === true)
+  }
+
+  const getUncheckedTasks = () => {
+    return tasks.filter(task => task.status === false)
+  }
+
   return (
     <div className="taskList">
       {/* maps over tasks and returns only unchecked ones */}
       <ul>
-        {tasks.map(task => task.status === false && (
+        {getUncheckedTasks().map((task, index) => (
           <Show
             key={task.id}
             id={task.id}
+            index={index}
             status={task.status}
             description={task.description}
             logo_url={task.logo_url}
+            toggleCheckbox={toggleCheckbox}
           />
         ))}
       </ul>
 
       {/* maps over tasks and returns only checked ones */}
       <ul>
-        {tasks.map(task => task.status === true && (
+        {getCheckedTasks().map(task => (
           <Checked
             status={task.status}
             description={task.description}

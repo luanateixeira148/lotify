@@ -5,6 +5,7 @@ import axios from 'axios';
 const classNames = require('classnames');
 
 export default function Show(props) {
+  console.log('props..........',props);
 
   const handleClick = (id) => {
     console.log('delete buttonw as clicked');
@@ -16,7 +17,7 @@ export default function Show(props) {
     
     <div className="show">
       <form>
-          <input type='checkbox' id='task-checkbox' />
+          <input type='checkbox' id='task-checkbox' checked={props.status} onClick={() => props.toggleCheckbox(props.id)} />
           <label htmlFor="task-checkbox">
             {props.description}
           </label>

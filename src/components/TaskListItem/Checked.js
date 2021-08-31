@@ -8,7 +8,7 @@ export default function Show(props) {
   return (
     <div className='checked'>
       <form>
-          <input type='checkbox' id='task-checkbox' checked/>
+          <input type='checkbox' id='task-checkbox' checked />
           <label htmlFor="task-checkbox">
             {props.description}
           </label>
