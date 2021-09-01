@@ -3,6 +3,7 @@ import "./TaskList.scss";
 import Show from './TaskListItem/Show';
 import Checked from './TaskListItem/Checked';
 import FormOnEdit from './TaskListItem/FormOnEdit';
+import TaskListItem from './TaskListItem';
 import axios from 'axios';
 
 const classNames = require('classnames');
@@ -10,7 +11,6 @@ const classNames = require('classnames');
 export default function TaskList(props) {
 
   const [tasks, setTasks] = useState([]);
-
 
   // makes axios get request and sets initial tasks
   useEffect(() => {
@@ -46,44 +46,17 @@ export default function TaskList(props) {
     return tasks.filter(task => task.status === false)
   }
 
-  const [edit, setEdit] = useState('show');
+  // const [edit, setEdit] = useState('show');
   return (
     <div className="taskList">
       
       <ul>
-        {/* maps over tasks and returns only unchecked ones */}
         {getUncheckedTasks().map(task => (
-          <>
-            {edit === 'show' && (
-
-              <Show
-                key={task.id}
-                id={task.id}
-                status={task.status}
-                description={task.description}
-                logo_url={task.logo_url}
-                toggleCheckbox={toggleCheckbox}
-                tasks={tasks}
-                setTasks={setTasks}
-                setEdit={setEdit}
-              />
-
-              )}
-
-              {edit === 'edit' && (
-        
-                <FormOnEdit 
-                
-                  setEdit={setEdit}
-                  description={task.description}
-                  location={task.name}
-                  
-                />
-        
-              )}
-          </>
+          <TaskListItem 
+            task={task}
+            toggleCheckbox={toggleCheckbox}
+          />
         ))}
-
       </ul>
 
 

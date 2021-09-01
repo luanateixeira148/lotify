@@ -8,15 +8,15 @@ export default function Show(props) {
 
   // handles delete button click
   const deleteTask = (id) => {
-    // props.task.filter would be more optimal
+    // // props.task.filter would be more optimal
     console.log('delete buttonw as clicked');
-    let output = [];
-    props.tasks.map(task => {
-      if (task.id !== id) {
-        output.push(task)
-      }
-    })
-    props.setTasks(output)
+    // let output = [];
+    // props.tasks.map(task => {
+    //   if (task.id !== id) {
+    //     output.push(task)
+    //   }
+    // })
+    props.setEdit('deleted')
 
     return axios
       .delete(`http://localhost:8080/api/tasks/${id}`)
