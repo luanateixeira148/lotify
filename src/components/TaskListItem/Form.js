@@ -10,10 +10,14 @@ export default function Form(props) {
   const [location, setLocation] = useState();
 
   // handles the save button in the form and submits the input data to the database
-  const handleClick = () => {
-    console.log('save button was clicked.');
+  const addTask = () => {
     return axios
       .post(`http://localhost:8080/api/tasks`, {'description': description, 'location_id':  location})
+  }
+
+  const editTask = () => {
+    return axios
+      .put(`http://localhost:8080/api/tasks/edit/${id}?description=${description}?location_id=${location}`)
   }
 
   return (
@@ -42,7 +46,7 @@ export default function Form(props) {
           }}
         />
       </form>
-      <Button save onClick={() => handleClick()} />
+      <Button save onClick={() => addTask()} />
     </div>
   );
 
