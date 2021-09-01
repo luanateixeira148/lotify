@@ -6,8 +6,8 @@ const classNames = require('classnames');
 
 export default function Form(props) {
 
-  const [description, setDescription] = useState();
-  const [location, setLocation] = useState();
+  const [description, setDescription] = useState(props.description);
+  const [location, setLocation] = useState(props.location);
 
   // handles the save button in the form and submits the input data to the database
   // const addTask = () => {
@@ -29,7 +29,7 @@ export default function Form(props) {
           name="description" 
           type="text" 
           placeholder="Add description"
-          value={props.description}
+          value={description}
           onChange={(event) => {
             setDescription(event.target.value);
             console.log(event.target.value);

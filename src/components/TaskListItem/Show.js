@@ -8,6 +8,7 @@ export default function Show(props) {
 
   // handles delete button click
   const deleteTask = (id) => {
+    // props.task.filter would be more optimal
     console.log('delete buttonw as clicked');
     let output = [];
     props.tasks.map(task => {

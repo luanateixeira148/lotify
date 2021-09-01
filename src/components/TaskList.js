@@ -10,7 +10,7 @@ const classNames = require('classnames');
 export default function TaskList(props) {
 
   const [tasks, setTasks] = useState([]);
-  const [edit, setEdit] = useState('show');
+
 
   // makes axios get request and sets initial tasks
   useEffect(() => {
@@ -46,40 +46,46 @@ export default function TaskList(props) {
     return tasks.filter(task => task.status === false)
   }
 
+  const [edit, setEdit] = useState('show');
   return (
     <div className="taskList">
-      {edit === 'show' && (
-        <ul>
-          {/* maps over tasks and returns only unchecked ones */}
-          {getUncheckedTasks().map(task => (
+      
+      <ul>
+        {/* maps over tasks and returns only unchecked ones */}
+        {getUncheckedTasks().map(task => (
+          <>
+            {edit === 'show' && (
 
-            <Show
-              key={task.id}
-              id={task.id}
-              status={task.status}
-              description={task.description}
-              logo_url={task.logo_url}
-              toggleCheckbox={toggleCheckbox}
-              tasks={tasks}
-              setTasks={setTasks}
-              setEdit={setEdit}
-            />
+              <Show
+                key={task.id}
+                id={task.id}
+                status={task.status}
+                description={task.description}
+                logo_url={task.logo_url}
+                toggleCheckbox={toggleCheckbox}
+                tasks={tasks}
+                setTasks={setTasks}
+                setEdit={setEdit}
+              />
 
-          ))}
+              )}
 
-        </ul>
-
-      )}
-
-      {edit === 'edit' && (
-
-        <FormOnEdit 
+              {edit === 'edit' && (
         
-          setEdit={setEdit}
-          
-        />
+                <FormOnEdit 
+                
+                  setEdit={setEdit}
+                  description={task.description}
+                  location={task.name}
+                  
+                />
+        
+              )}
+          </>
+        ))}
 
-      )}
+      </ul>
+
 
       <ul>
         {/* maps over tasks and returns only checked ones */}
