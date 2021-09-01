@@ -9,9 +9,23 @@ export default function Checked(props) {
   //handles delete button click
   const deleteTask = (id) => {
     console.log('delete buttonw as clicked');
+    let output = [];
+    props.tasks.map(task => {
+      if (task.id !== id) {
+        output.push(task)
+      }
+    })
+    props.setTasks(output)
+
     return axios
       .delete(`http://localhost:8080/api/tasks/${id}`)
   }
+
+  // const deleteTask = (id) => {
+  //   console.log('delete buttonw as clicked');
+  //   return axios
+  //     .delete(`http://localhost:8080/api/tasks/${id}`)
+  // }
 
   return (
     <div className="checked">

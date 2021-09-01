@@ -15,10 +15,10 @@ export default function Form(props) {
       .post(`http://localhost:8080/api/tasks`, {'description': description, 'location_id':  location})
   }
 
-  const editTask = () => {
-    return axios
-      .put(`http://localhost:8080/api/tasks/edit/${id}?description=${description}?location_id=${location}`)
-  }
+  // const editTask = () => {
+  //   return axios
+  //     .put(`http://localhost:8080/api/tasks/edit/${id}?description=${description}?location_id=${location}`)
+  // }
 
   return (
     <div className="form">

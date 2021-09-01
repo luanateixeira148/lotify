@@ -56,6 +56,8 @@ export default function TaskList(props) {
             description={task.description}
             logo_url={task.logo_url}
             toggleCheckbox={toggleCheckbox}
+            tasks={tasks}
+            setTasks={setTasks}
           />
         ))}
       </ul>
@@ -70,6 +72,8 @@ export default function TaskList(props) {
             description={task.description}
             logo_url={task.logo_url}
             toggleCheckbox={toggleCheckbox}
+            tasks={tasks}
+            setTasks={setTasks}
           />
         ))}
       </ul>
