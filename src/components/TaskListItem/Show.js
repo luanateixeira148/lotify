@@ -34,7 +34,7 @@ export default function Show(props) {
         src={props.logo_url}
         alt='props.logo_url comes here'
       />
-      <Button edit />
+      <Button edit onClick={() => props.setEdit('edit')} />
       <Button delete onClick={() => deleteTask(props.id)} />
     </div>
 

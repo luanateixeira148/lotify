@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import "./TaskList.scss";
 import Show from './TaskListItem/Show';
 import Checked from './TaskListItem/Checked';
+import FormOnEdit from './TaskListItem/FormOnEdit';
 import axios from 'axios';
 
 const classNames = require('classnames');
@@ -9,6 +10,7 @@ const classNames = require('classnames');
 export default function TaskList(props) {
 
   const [tasks, setTasks] = useState([]);
+  const [edit, setEdit] = useState('show');
 
   // makes axios get request and sets initial tasks
   useEffect(() => {
@@ -46,24 +48,41 @@ export default function TaskList(props) {
 
   return (
     <div className="taskList">
-      {/* maps over tasks and returns only unchecked ones */}
-      <ul>
-        {getUncheckedTasks().map(task => (
-          <Show
-            key={task.id}
-            id={task.id}
-            status={task.status}
-            description={task.description}
-            logo_url={task.logo_url}
-            toggleCheckbox={toggleCheckbox}
-            tasks={tasks}
-            setTasks={setTasks}
-          />
-        ))}
-      </ul>
+      {edit === 'show' && (
+        <ul>
+          {/* maps over tasks and returns only unchecked ones */}
+          {getUncheckedTasks().map(task => (
 
-      {/* maps over tasks and returns only checked ones */}
+            <Show
+              key={task.id}
+              id={task.id}
+              status={task.status}
+              description={task.description}
+              logo_url={task.logo_url}
+              toggleCheckbox={toggleCheckbox}
+              tasks={tasks}
+              setTasks={setTasks}
+              setEdit={setEdit}
+            />
+
+          ))}
+
+        </ul>
+
+      )}
+
+      {edit === 'edit' && (
+
+        <FormOnEdit 
+        
+          setEdit={setEdit}
+          
+        />
+
+      )}
+
       <ul>
+        {/* maps over tasks and returns only checked ones */}
         {getCheckedTasks().map(task => (
           <Checked
             key={task.id}
