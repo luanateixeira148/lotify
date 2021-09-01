@@ -7,7 +7,7 @@ const classNames = require('classnames');
 export default function Checked(props) {
 
   //handles delete button click
-  const handleClick = (id) => {
+  const deleteTask = (id) => {
     console.log('delete buttonw as clicked');
     return axios
       .delete(`http://localhost:8080/api/tasks/${id}`)
@@ -15,18 +15,18 @@ export default function Checked(props) {
 
   return (
     <div className="checked">
-      <form onClick={() => props.toggleCheckbox(props.id)} >
-          <input type='checkbox' id='task-checkbox' checked={props.status} />
-          <label htmlFor="task-checkbox">
-            {props.description}
-          </label>
+      <form  >
+          <input type='checkbox' id='task-checkbox' checked={props.status} onChange={() => props.toggleCheckbox(props.id)} />
       </form>
+      <label>
+        {props.description}
+      </label>
       <img
         src={props.logo_url}
         alt='props.logo_url comes here'
       />
       <Button edit />
-      <Button delete onClick={() => handleClick(props.id)} />
+      <Button delete onClick={() => deleteTask(props.id)} />
     </div>
   );
 

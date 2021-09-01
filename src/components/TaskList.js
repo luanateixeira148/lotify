@@ -16,31 +16,24 @@ export default function TaskList(props) {
     .then(res => { setTasks(res.data) })
   }, [])
 
-  // const updateStatus = function (taskId) {
-  //   // get the day object
-  //   const taskObj = tasks.find(task => task.id === taskId)
-  //   //initialize the num spots to zerio
-  //   let status;
-  //   // if an interview does not exist, increase the number of spots remainin
-  //   (taskObj.status === false) ? taskObj.status = true : taskObj.status = false
-    
-  //   return axios.put('http://localhost:8080/api/tasks/' + taskId, taskObj)
-  //   .then((res) => {
-  //     console.log(res);
-  //     // const days = updateSpots(state.day, state.days, taskOb);
-  //     // setState({...state, appointments, days});
-  //   }) 
-  // };
-
   const toggleCheckbox = (id) => {
-    let taskFromStates = tasks
+    let taskFromStates = tasks;
+    let status = '';
+    // loops thro all tasks, finds the one that was clicked, and changes the status
     for (let i = 0; i < taskFromStates.length; i++) {
       const taskObj = taskFromStates[i];
       if (taskObj.id === id) {
-        taskFromStates[i].status = !taskFromStates[i].status 
+        taskFromStates[i].status = !taskFromStates[i].status;
+        status = taskFromStates[i].status;
       }
     }
-    setTasks([...taskFromStates])
+    // uses an axios request to send the new status to the backend
+    axios
+      .put(`http://localhost:8080/api/tasks/${id}?status=${status}`)
+      .then((res) => {
+        setTasks([...taskFromStates])
+      })
+      .catch((err) => console.log(err))
   }
 
   const getCheckedTasks = () => {
@@ -59,7 +52,6 @@ export default function TaskList(props) {
           <Show
             key={task.id}
             id={task.id}
-            // index={index}
             status={task.status}
             description={task.description}
             logo_url={task.logo_url}
@@ -74,7 +66,6 @@ export default function TaskList(props) {
           <Checked
             key={task.id}
             id={task.id}
-            // index={index}
             status={task.status}
             description={task.description}
             logo_url={task.logo_url}
