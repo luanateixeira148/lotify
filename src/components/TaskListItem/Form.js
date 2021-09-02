@@ -13,12 +13,10 @@ export default function Form(props) {
   const addTask = () => {
     return axios
       .post(`http://localhost:8080/api/tasks`, {'description': description, 'location_id':  location})
+      // .then((res) => {
+      //   props.setLoading(true);
+      // })
   }
-
-  // const editTask = () => {
-  //   return axios
-  //     .put(`http://localhost:8080/api/tasks/edit/${id}?description=${description}?location_id=${location}`)
-  // }
 
   return (
     <div className="form">

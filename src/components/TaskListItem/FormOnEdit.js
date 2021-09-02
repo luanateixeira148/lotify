@@ -5,32 +5,20 @@ import Button from '../Button';
 const classNames = require('classnames');
 
 export default function FormOnEdit(props) {
-  console.log('+++++', props)
 
   const [description, setDescription] = useState(props.description);
   const [location, setLocation] = useState(props.location);
 
-  // handles the save button in the form and submits the input data to the database
-  // const addTask = () => {
-  //   return axios
-  //     .post(`http://localhost:8080/api/tasks`, {'description': description, 'location_id':  location})
-  // }
-
-  // const editTask = () => {
-  //   props.setEdit('show')
-  //   // return axios
-  //   //   .put(`http://localhost:8080/api/tasks/edit/${id}?description=${description}?location_id=${location}`)
-  // }
-
+  // edits the location and description of specific task
   const editTask = () => {
     let id = props.id;
     axios
       .put(`http://localhost:8080/api/tasks/edit/${id}?description=${description}&location_id=${location}`)
       .then((res) => {
-        props.setEdit('show')
+        props.setEdit('show');
+        props.setLoading(true);
       })
       .catch((err) => console.log(err))
-    
   }
 
   return (
@@ -55,7 +43,6 @@ export default function FormOnEdit(props) {
           value={location}
           onChange={(event) => {
             setLocation(event.target.value);
-            console.log(event.target.value);
           }}
         />
       </form>

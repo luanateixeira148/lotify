@@ -10,10 +10,6 @@ export default function TaskListItem(props) {
   const {task, toggleCheckbox} = props;
   const [edit, setEdit] = useState('show');
 
-  // const getUncheckedTasks = function () {
-  //   return tasks.filter(task => task.status === false)
-  // }
-
     if (edit === 'show') {
       return <Show
       key={task.id}
@@ -24,20 +20,18 @@ export default function TaskListItem(props) {
       toggleCheckbox={toggleCheckbox}
       setEdit={setEdit}
     />
-    } else if (edit === 'edit') {
-
+    } 
+    else if (edit === 'edit') {
       return <FormOnEdit 
-            
         setEdit={setEdit}
         description={task.description}
         location={task.name}
         id={task.id}
+        setLoading={props.setLoading}
       />
-
-    } else {
-
+    } 
+    else {
       return null;
-
     }
 
 }

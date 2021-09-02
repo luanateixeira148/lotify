@@ -11,12 +11,16 @@ const classNames = require('classnames');
 export default function TaskList(props) {
 
   const [tasks, setTasks] = useState([]);
+  const [loading, setLoading] = useState(false);
 
-  // makes axios get request and sets initial tasks
+  // makes initial axios get request and sets initial tasks
   useEffect(() => {
     axios.get("http://localhost:8080/api/tasks")
-    .then(res => { setTasks(res.data) })
-  }, [])
+    .then(res => { 
+      setTasks(res.data);  
+      setLoading(false);
+    })
+  }, [loading])
 
   const toggleCheckbox = (id) => {
     let taskFromStates = tasks;
@@ -46,19 +50,17 @@ export default function TaskList(props) {
     return tasks.filter(task => task.status === false)
   }
 
-  // const [edit, setEdit] = useState('show');
   return (
     <div className="taskList">
-      
       <ul>
         {getUncheckedTasks().map(task => (
           <TaskListItem 
             task={task}
             toggleCheckbox={toggleCheckbox}
+            setLoading={setLoading}
           />
         ))}
       </ul>
-
 
       <ul>
         {/* maps over tasks and returns only checked ones */}
