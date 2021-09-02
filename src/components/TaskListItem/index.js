@@ -6,7 +6,6 @@ import axios from 'axios';
 
 
 export default function TaskListItem(props) {
-  console.log('taskListItem props......', props)
   const {task, toggleCheckbox} = props;
   const [edit, setEdit] = useState('show');
 
