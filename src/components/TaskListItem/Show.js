@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import "./styles.scss";
 import Button from "../Button";
 import axios from 'axios';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
 const classNames = require('classnames');
 
 export default function Show(props) {
@@ -23,10 +25,7 @@ export default function Show(props) {
       <label>
         {props.description}
       </label>
-      <img
-        src={props.logo_url}
-        alt='props.logo_url comes here'
-      />
+      <FontAwesomeIcon icon={faMapMarkerAlt} />
       <Button edit onClick={() => props.setEdit('edit')} />
       <Button delete onClick={() => deleteTask(props.id)} />
     </div>
