@@ -8,6 +8,8 @@ import Checked from './components/TaskListItem/Checked';
 import Form from './components/TaskListItem/Form';
 import Header from './components/Header';
 import TaskList from './components/TaskList';
+import Footer from './components/Footer';
+import { forOfStatement } from '@babel/types';
 
 function App() {
   return (
@@ -15,9 +17,7 @@ function App() {
       <Header />
       <Form />
       <TaskList />
-      {/* <div id="footer">
-        <Button add />
-      </div> */}
+      <Footer />
     </div>
   );
 }
