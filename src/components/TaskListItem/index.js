@@ -19,6 +19,7 @@ export default function TaskListItem(props) {
       logo_url={task.logo_url}
       toggleCheckbox={toggleCheckbox}
       setEdit={setEdit}
+      distance={task.distance}
     />
     } 
     else if (edit === 'edit') {

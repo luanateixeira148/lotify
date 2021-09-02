@@ -8,6 +8,8 @@ const classNames = require('classnames');
 
 export default function Show(props) {
 
+  console.log('PROPS FROM SHOW', props)
+
   // handles delete button click
   const deleteTask = (id) => {
     console.log('delete button was clicked');
@@ -25,6 +27,7 @@ export default function Show(props) {
       <label>
         {props.description}
       </label>
+      <p>{props.distance}km away</p>
       <FontAwesomeIcon icon={faMapMarkerAlt} />
       <Button edit onClick={() => props.setEdit('edit')} />
       <Button delete onClick={() => deleteTask(props.id)} />
