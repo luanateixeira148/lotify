@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import "./styles.scss";
 import Button from '../Button';
-import Dropdown from './Dropdown';
 import Select from 'react-select';
 const classNames = require('classnames');
 
