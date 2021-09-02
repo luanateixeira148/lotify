@@ -8,9 +8,6 @@ const classNames = require('classnames');
 
 export default function Show(props) {
 
-  console.log('PROPS FROM SHOW', props)
-
-  // handles delete button click
   const deleteTask = (id) => {
     console.log('delete button was clicked');
     props.setEdit('deleted')

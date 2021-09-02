@@ -9,7 +9,6 @@ export default function FormOnEdit(props) {
   const [description, setDescription] = useState(props.description);
   const [location, setLocation] = useState(props.location);
 
-  // edits the location and description of specific task
   const editTask = () => {
     let id = props.id;
     axios
