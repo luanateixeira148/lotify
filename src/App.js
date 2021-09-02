@@ -12,12 +12,21 @@ import Footer from './components/Footer';
 import { forOfStatement } from '@babel/types';
 
 function App() {
+
+  const [formState, setFormState] = useState('hide');
+
   return (
     <div className="App">
       <Header />
-      <Form />
+      <Form 
+        setFormState={setFormState}
+        formState={formState}
+      />
       <TaskList />
-      <Footer />
+      <Footer
+        setFormState={setFormState}
+        formState={formState}
+      />
     </div>
   );
 }
