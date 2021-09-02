@@ -28,14 +28,16 @@ export default function TaskListItem(props) {
 
       return <FormOnEdit 
             
-              setEdit={setEdit}
-              description={task.description}
-              location={task.name}
-              
-            />
+        setEdit={setEdit}
+        description={task.description}
+        location={task.name}
+        id={task.id}
+      />
 
     } else {
+
       return null;
+
     }
 
 }

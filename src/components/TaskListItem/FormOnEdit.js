@@ -4,7 +4,8 @@ import "./styles.scss";
 import Button from '../Button';
 const classNames = require('classnames');
 
-export default function Form(props) {
+export default function FormOnEdit(props) {
+  console.log('+++++', props)
 
   const [description, setDescription] = useState(props.description);
   const [location, setLocation] = useState(props.location);
@@ -15,10 +16,21 @@ export default function Form(props) {
   //     .post(`http://localhost:8080/api/tasks`, {'description': description, 'location_id':  location})
   // }
 
+  // const editTask = () => {
+  //   props.setEdit('show')
+  //   // return axios
+  //   //   .put(`http://localhost:8080/api/tasks/edit/${id}?description=${description}?location_id=${location}`)
+  // }
+
   const editTask = () => {
-    props.setEdit('show')
-    // return axios
-    //   .put(`http://localhost:8080/api/tasks/edit/${id}?description=${description}?location_id=${location}`)
+    let id = props.id;
+    axios
+      .put(`http://localhost:8080/api/tasks/edit/${id}?description=${description}&location_id=${location}`)
+      .then((res) => {
+        props.setEdit('show')
+      })
+      .catch((err) => console.log(err))
+    
   }
 
   return (
