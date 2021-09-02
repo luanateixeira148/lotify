@@ -5,27 +5,17 @@ import Checked from './TaskListItem/Checked';
 import FormOnEdit from './TaskListItem/FormOnEdit';
 import TaskListItem from './TaskListItem';
 import axios from 'axios';
-
 const classNames = require('classnames');
 
 export default function TaskList(props) {
 
-  const [tasks, setTasks] = useState([]);
-  const [loading, setLoading] = useState(false);
+  const tasks = props.tasks;
 
-  // makes initial axios get request and sets initial tasks
-  useEffect(() => {
-    axios.get("http://localhost:8080/api/tasks")
-    .then(res => { 
-      setTasks(res.data);  
-      setLoading(false);
-    })
-  }, [loading])
-
+  /* checks and unchecks a task when clicked */
   const toggleCheckbox = (id) => {
     let taskFromStates = tasks;
     let status = '';
-    // loops thro all tasks, finds the one that was clicked, and changes the status
+    /* finds the one that was clicked and changes its status */
     for (let i = 0; i < taskFromStates.length; i++) {
       const taskObj = taskFromStates[i];
       if (taskObj.id === id) {
@@ -33,19 +23,20 @@ export default function TaskList(props) {
         status = taskFromStates[i].status;
       }
     }
-    // uses an axios request to send the new status to the backend
+    /* sends new status to db */
     axios
       .put(`http://localhost:8080/api/tasks/${id}?status=${status}`)
       .then((res) => {
-        setTasks([...taskFromStates])
+        props.setTasks([...taskFromStates])
       })
       .catch((err) => console.log(err))
   }
 
+  /* filters tasks to separate checked from unchecked */
+  /* unchecked tasks should be at the top, checked tasks should be at the bottom */
   const getCheckedTasks = () => {
     return tasks.filter(task => task.status === true)
   }
-
   const getUncheckedTasks = () => {
     return tasks.filter(task => task.status === false)
   }
@@ -57,13 +48,12 @@ export default function TaskList(props) {
           <TaskListItem 
             task={task}
             toggleCheckbox={toggleCheckbox}
-            setLoading={setLoading}
+            setLoading={props.setLoading}
           />
         ))}
       </ul>
 
       <ul>
-        {/* maps over tasks and returns only checked ones */}
         {getCheckedTasks().map(task => (
           <Checked
             key={task.id}
@@ -73,12 +63,10 @@ export default function TaskList(props) {
             logo_url={task.logo_url}
             toggleCheckbox={toggleCheckbox}
             tasks={tasks}
-            setTasks={setTasks}
+            setTasks={props.setTasks}
           />
         ))}
       </ul>
     </div>
-
   );
-
 }

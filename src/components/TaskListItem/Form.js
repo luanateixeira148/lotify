@@ -6,18 +6,19 @@ const classNames = require('classnames');
 
 export default function Form(props) {
 
-  // const [formState, setFormState] = useState('hide');
-
   const [description, setDescription] = useState();
   const [location, setLocation] = useState();
 
-  // handles the save button in the form and submits the input data to the database
   const addTask = () => {
-    return axios
-      .post(`http://localhost:8080/api/tasks`, {'description': description, 'location_id':  location})
-      // .then((res) => {
-      //   props.setLoading(true);
-      // })
+    axios
+      .post(`http://localhost:8080/api/tasks`,
+        {'description': description,
+         'location_id':  location})
+      .then((res) => {
+        props.setLoading(true);
+        props.setFormState('hide');
+      })
+      .catch((err) => console.log(err))
   }
 
   if (props.formState === 'show') {
@@ -50,12 +51,8 @@ export default function Form(props) {
         <Button save onClick={() => addTask()} />
       </div>
     );
-  } else if (props.formState === 'hide') {
-    return null
-  } else {
-    return null
-  }
-
-  
+    } else {
+      return null
+    }
 
 }
