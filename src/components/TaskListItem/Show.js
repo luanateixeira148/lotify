@@ -7,7 +7,6 @@ import { faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
 const classNames = require('classnames');
 
 export default function Show(props) {
-  console.log(props);
   const deleteTask = (id) => {
     console.log('delete button was clicked');
     props.setEdit('deleted')

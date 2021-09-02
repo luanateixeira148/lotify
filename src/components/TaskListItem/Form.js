@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import "./styles.scss";
 import Button from '../Button';
@@ -9,26 +9,40 @@ const classNames = require('classnames');
 
 export default function Form(props) {
 
-  const options = [
-    { value: 1, label: 'Shoppers Drug Mart' },
-    { value: 2, label: 'H-Mart Downtown' },
-    { value: 3, label: 'Breka Bakery & Café (Davie)' },
-  ];
+  const [description, setDescription] = useState(null);
+  const [location, setLocation] = useState(null);
+  const [locations, setLocations] = useState([]);
 
-  const [description, setDescription] = useState();
-  const [location, setLocation] = useState();
-  const [selectedOption, setSelectedOption] = useState(null);
-  console.log('LOCATION......', location)
-  console.log('SELECTED OPTION', selectedOption)
+  /* Makes get request and sets locations to be shown on the dropdown menu */
+  useEffect(() => {
+    axios.get("http://localhost:8080/api/locations")
+    .then(res => { 
+      setLocations(res.data);  
+    })
+  }, [])
 
+  /* Takes the locations from the axios request, and output it in the right format for the dropdown location */
+  const getLocations = function(locations) {
+    let output = [];
+    for (let location of locations) {
+      output.push({value: location.id, label: location.name + ', ' + location.address})
+    }
+    return output;
+  }
+
+  /* uses the getLocations function and passes the locations object to be used by the React-Select component */
+  const options = getLocations(locations)
+
+  /* Creates the post request to send description and locationId to the db */
   const addTask = () => {
     axios
       .post(`http://localhost:8080/api/tasks`,
         {'description': description,
-         'location_id':  selectedOption.value})
+         'location_id':  location.value})
       .then((res) => {
         props.setLoading(true);
         props.setFormState('hide');
+        setDescription(null)
       })
       .catch((err) => console.log(err))
   }
@@ -45,32 +59,21 @@ export default function Form(props) {
             value={description}
             onChange={(event) => {
               setDescription(event.target.value);
-              console.log(event.target.value);
             }}
           />
           <div className="dropdown">
             <Select
-              defaultValue={selectedOption}
-              onChange={setSelectedOption}
+              defaultValue='Select location'
+              onChange={setLocation}
               options={options}
             />
           </div>
-          {/* <input 
-            className="location" 
-            name="location"
-            type="text" 
-            placeholder="Add location"
-            value={location}
-            onChange={(event) => {
-              setLocation(event.target.value);
-              console.log(event.target.value);
-            }}
-          /> */}
         </form>
         <Button save onClick={() => addTask()} />
       </div>
     );
     } else {
+      /* Returns null to hide the form */
       return null
     }
 
