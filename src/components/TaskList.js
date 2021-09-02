@@ -10,7 +10,7 @@ const classNames = require('classnames');
 export default function TaskList(props) {
 
   const tasks = props.tasks;
-
+  // console.log('tasks.......',tasks);
   /* checks and unchecks a task when clicked */
   const toggleCheckbox = (id) => {
     let taskFromStates = tasks;
@@ -49,6 +49,10 @@ export default function TaskList(props) {
             task={task}
             toggleCheckbox={toggleCheckbox}
             setLoading={props.setLoading}
+            map_url={props.map_url}
+            name={props.name}
+            address={props.address}
+
           />
         ))}
       </ul>
