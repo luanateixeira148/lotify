@@ -5,7 +5,6 @@ import Button from '../Button';
 import Select from 'react-select';
 const classNames = require('classnames');
 
-
 export default function Form(props) {
 
   const [description, setDescription] = useState(null);
