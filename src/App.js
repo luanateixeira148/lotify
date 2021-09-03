@@ -41,7 +41,7 @@ function App() {
     <div className="App">
       <Header 
         bestRoute={bestRoute}
-        // setBestRoute={setBestRoute}
+        // setLoading={setLoading}
         />
       <Form 
         setFormState={setFormState}
