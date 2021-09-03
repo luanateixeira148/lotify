@@ -17,21 +17,24 @@ export default function Show(props) {
   return (
     
     <div className="show">
-      <form >
-        <input type='checkbox' id='task-checkbox' checked={props.status} onChange={() => props.toggleCheckbox(props.id)} />
-      </form>
-      <label>
-        {props.description}
-      </label>
-      <p>{props.distance}km</p>
-      <p>{props.name}</p>
-      {/* <p>{props.address}</p> */}
-      <a href={props.map_url} > 
-        <FontAwesomeIcon icon={faMapMarkerAlt} />
-
-      </a>
-      <Button edit onClick={() => props.setEdit('edit')} />
-      <Button delete onClick={() => deleteTask(props.id)} />
+      <div className="info-container">
+        <form >
+          <input type='checkbox' id='task-checkbox' checked={props.status} onChange={() => props.toggleCheckbox(props.id)} />
+        </form>
+        <div className="info">
+          <label>{props.description}</label>
+          <hr />
+          <h4>{props.name}</h4>
+        </div>
+        <h3>{props.distance}km</h3>
+        <a href={props.map_url} > 
+          <FontAwesomeIcon icon={faMapMarkerAlt} />
+        </a>
+      </div>
+      <div className="button-container">
+        <Button edit onClick={() => props.setEdit('edit')} />
+        <Button delete onClick={() => deleteTask(props.id)} />
+      </div>
     </div>
 
   );
