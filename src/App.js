@@ -10,7 +10,7 @@ import TaskList from './components/TaskList';
 import Footer from './components/Footer';
 import Dropdown from './components/TaskListItem/Dropdown';
 import Slide from './components/TaskListItem/Slide';
-import Notification from './components/Notification';
+import NotificationPage from './components/NotificationPage';
 
 function App() {
 
@@ -37,7 +37,7 @@ function App() {
   }, [tasks])
   
   return (
-    <Notification />
+    <NotificationPage />
     // <div className="App">
     //   <Header 
     //     bestRoute={bestRoute}
