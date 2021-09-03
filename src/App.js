@@ -15,7 +15,6 @@ function App() {
   const [formState, setFormState] = useState('hide');
   const [tasks, setTasks] = useState([]);
   const [loading, setLoading] = useState(false);
-  // const [bestRoute, setBestRoute] = useState('https://www.google.com/maps/dir/49.2773808,-123.1275059/Breka+Bakery+%26+Caf%C3%A9+(Davie),+855+Davie+St,+Vancouver,+BC+V6Z+1B7/Shoppers+Drug+Mart,+1006+Homer+St,+Vancouver,+BC+V6B+2W9/H-Mart+Downtown,+590+Robson+St+#200,+Vancouver,+BC+V6B+2B7/');
   const [bestRoute, setBestRoute] = useState([]);
 
   /* makes initial axios get request and sets initial tasks */
