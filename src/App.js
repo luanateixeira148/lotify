@@ -27,22 +27,18 @@ function App() {
     })
   }, [loading])
 
-
+  /* makes axios get request to set the right Google Maps URL for the best route button */
   useEffect(() => {
     axios.get("http://localhost:8080/api/bestroute")
     .then(res => { 
       setBestRoute(res.data);
-      // console.log('res.data', res.data)
     })
   }, [])
-
-  console.log('bestRoute:',bestRoute); //array of objects
   
   return (
     <div className="App">
       <Header 
         bestRoute={bestRoute}
-        // setLoading={setLoading}
         />
       <Form 
         setFormState={setFormState}
