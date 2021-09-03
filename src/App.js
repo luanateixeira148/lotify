@@ -10,6 +10,7 @@ import TaskList from './components/TaskList';
 import Footer from './components/Footer';
 import Dropdown from './components/TaskListItem/Dropdown';
 import Slide from './components/TaskListItem/Slide';
+import Notification from './components/Notification';
 
 function App() {
 
@@ -36,25 +37,26 @@ function App() {
   }, [tasks])
   
   return (
-    <div className="App">
-      <Header 
-        bestRoute={bestRoute}
-      />
-      <Form 
-        setFormState={setFormState}
-        formState={formState}
-        setLoading={setLoading}
-      />
-      <TaskList
-        tasks={tasks}
-        setTasks={setTasks}
-        setLoading={setLoading}
-      />
-      <Footer
-        setFormState={setFormState}
-        formState={formState}
-      />
-    </div>
+    <Notification />
+    // <div className="App">
+    //   <Header 
+    //     bestRoute={bestRoute}
+    //   />
+    //   <Form 
+    //     setFormState={setFormState}
+    //     formState={formState}
+    //     setLoading={setLoading}
+    //   />
+    //   <TaskList
+    //     tasks={tasks}
+    //     setTasks={setTasks}
+    //     setLoading={setLoading}
+    //   />
+    //   <Footer
+    //     setFormState={setFormState}
+    //     formState={formState}
+    //   />
+    // </div>
   );
 }
 
