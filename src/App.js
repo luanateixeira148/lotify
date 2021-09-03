@@ -29,7 +29,6 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <Slide />
       <Form 
         setFormState={setFormState}
         formState={formState}
