@@ -10,28 +10,21 @@ import { faCheck } from '@fortawesome/free-solid-svg-icons';
 
 const classNames = require('classnames');
 
-/* Icons */
-const addIcon = <FontAwesomeIcon icon={faPlus} />
-const deleteIcon = <FontAwesomeIcon icon={faTrash} />
-const editIcon = <FontAwesomeIcon icon={faPen} />
-const saveIcon = <FontAwesomeIcon icon={faCheck} />
-
-
 export default function Button(props) {
   
-  const includesIcon = function() {
+  const includeIcon = function() {
     let icon;
     if (props.add) {
-      icon = addIcon;
+      icon = <FontAwesomeIcon icon={faPlus} />;
     }
     if (props.delete) {
-      icon = deleteIcon;
+      icon = <FontAwesomeIcon icon={faTrash} />;
     }
     if (props.edit) {
-      icon = editIcon;
+      icon = <FontAwesomeIcon icon={faPen} />;
     }
     if (props.save) {
-      icon = saveIcon;
+      icon = <FontAwesomeIcon icon={faCheck} />;
     }
     return icon
   }
@@ -48,9 +41,8 @@ export default function Button(props) {
     <button
       className={buttonClass}
       onClick={props.onClick}
-      disabled={props.disabled}
     >
-      {includesIcon()}
+      {includeIcon()}
     </button>
   );
 
