@@ -33,7 +33,7 @@ function App() {
     .then(res => { 
       setBestRoute(res.data);
     })
-  }, [])
+  }, [tasks])
   
   return (
     <div className="App">
