@@ -1,9 +1,7 @@
-// Import Swiper React components
+/* THIS COMPONENT IS NOT BEING USED, IT IS JUST FOR REFERENCE ON HOW TO IMPLEMENT THE SWIPER LIBRARY */
+
 import { Swiper, SwiperSlide } from 'swiper/react';
 import './styles.scss';
-
-// Import Swiper styles
-// import 'swiper/css';
 import 'swiper/swiper-bundle.css';
 
 export default () => {

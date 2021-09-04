@@ -3,7 +3,6 @@ import axios from 'axios';
 import "./styles.scss";
 import Button from '../Button';
 import Select from 'react-select';
-const classNames = require('classnames');
 
 export default function FormOnEdit(props) {
 
@@ -63,19 +62,8 @@ export default function FormOnEdit(props) {
               options={options}
             />
           </div>
-        {/* <input 
-          className="location" 
-          name="location"
-          type="text" 
-          placeholder="Add location"
-          value={location}
-          onChange={(event) => {
-            setLocation(event.target.value);
-          }}
-        /> */}
       </form>
       <Button save onClick={() => editTask()} />
     </div>
   );
-
 }

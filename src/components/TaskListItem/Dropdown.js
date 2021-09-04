@@ -1,3 +1,5 @@
+/* THIS COMPONENT IS NOT BEING USED, IT IS JUST FOR REFERENCE ON HOW TO IMPLEMENT THE SELECT COMPONENT */
+
 import React, { useState } from 'react';
 import Select from 'react-select';
 
@@ -7,13 +9,10 @@ const options = [
   { value: 3, label: 'Breka Bakery & Café (Davie)' },
 ];
 
-// THIS COMPONENT IS NOT BEING USED, IT IS JUST FOR REFERENCE ON HOW TO IMPLEMENT THE SELECT COMPONENT
-
 export default function Dropdown() {
   const [selectedOption, setSelectedOption] = useState(null);
 
   return (
-
     <div className="dropdown">
       <Select
         defaultValue={selectedOption}

@@ -4,10 +4,8 @@ import Button from "../Button";
 import axios from 'axios';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
-const classNames = require('classnames');
 
 export default function Checked(props) {
-
   const deleteTask = (id) => {
     let output = [];
     props.tasks.map(task => {
@@ -32,5 +30,4 @@ export default function Checked(props) {
       <Button delete onClick={() => deleteTask(props.id)} />
     </div>
   );
-
 }

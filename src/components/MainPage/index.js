@@ -1,15 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import Button from '../Button';
-import Show from '../TaskListItem/Show';
-import Checked from '../TaskListItem/Checked';
 import Form from '../TaskListItem/Form';
 import Header from '../Header';
 import TaskList from '../TaskList';
 import Footer from '../Footer';
-import Dropdown from '../TaskListItem/Dropdown';
-import Slide from '../TaskListItem/Slide';
-import NotificationPage from '../NotificationPage';
 
 export default function MainPage() {
 

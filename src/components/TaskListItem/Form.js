@@ -3,7 +3,6 @@ import axios from 'axios';
 import "./styles.scss";
 import Button from '../Button';
 import Select from 'react-select';
-const classNames = require('classnames');
 
 export default function Form(props) {
 
@@ -70,9 +69,8 @@ export default function Form(props) {
         <Button save onClick={() => addTask()} />
       </div>
     );
-    } else {
-      /* Returns null to hide the form */
-      return null
-    }
-
+  } else {
+    /* Returns null to hide the form */
+    return null
+  }
 }

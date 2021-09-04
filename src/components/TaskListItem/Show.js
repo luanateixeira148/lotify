@@ -6,7 +6,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/swiper-bundle.css';
-const classNames = require('classnames');
 
 export default function Show(props) {
   const deleteTask = (id) => {
@@ -17,10 +16,7 @@ export default function Show(props) {
   }
 
   return (
-    
     <Swiper className="show"
-      // onSlideChange={() => console.log('slide change')}
-      // onSwiper={(swiper) => console.log(swiper)}
       spaceBetween={0}
       slidesPerView={1}
       slidesOffsetAfter={-250}
@@ -50,7 +46,5 @@ export default function Show(props) {
         </div>
       </SwiperSlide>
     </Swiper>
-    
   );
-
 }

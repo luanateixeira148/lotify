@@ -1,16 +1,13 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import "./TaskList.scss";
-import Show from './TaskListItem/Show';
 import Checked from './TaskListItem/Checked';
-import FormOnEdit from './TaskListItem/FormOnEdit';
 import TaskListItem from './TaskListItem';
 import axios from 'axios';
-const classNames = require('classnames');
 
 export default function TaskList(props) {
-
+  
   const tasks = props.tasks;
-  // console.log('tasks.......',tasks);
+
   /* checks and unchecks a task when clicked */
   const toggleCheckbox = (id) => {
     let taskFromStates = tasks;
@@ -52,7 +49,6 @@ export default function TaskList(props) {
             map_url={props.map_url}
             name={props.name}
             address={props.address}
-
           />
         ))}
       </ul>

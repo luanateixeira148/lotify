@@ -37,7 +37,6 @@ export default function Button(props) {
   });
 
   return (
-
     <button
       className={buttonClass}
       onClick={props.onClick}
@@ -45,5 +44,4 @@ export default function Button(props) {
       {includeIcon()}
     </button>
   );
-
 }
