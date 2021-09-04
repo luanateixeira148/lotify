@@ -2,10 +2,13 @@ import React from 'react';
 import "./styles.scss";
 import Button from "../Button";
 import axios from 'axios';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/swiper-bundle.css';
+
+/* Icons */
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
+import { faCheck } from '@fortawesome/free-solid-svg-icons';
 
 export default function Show(props) {
   const deleteTask = (id) => {
@@ -23,8 +26,13 @@ export default function Show(props) {
     >
       <SwiperSlide>
         <div className="info-container">
-          <form >
+          <form className="iput-container">
+
             <input type='checkbox' id='task-checkbox' checked={props.status} onChange={() => props.toggleCheckbox(props.id)} />
+            <span className="styled-checkbox">
+              <FontAwesomeIcon icon={faCheck} />
+            </span>
+
           </form>
           <div className="location-info">
             <label>{props.description}</label>
