@@ -1,5 +1,6 @@
 import React from 'react';
 import Button from './Button';
+import "./Footer.scss";
 
 export default function Footer(props) {
   const toggleForm = () => {
@@ -7,9 +8,11 @@ export default function Footer(props) {
   }
 
   return (
-    <Button 
-      add 
-      onClick={() => toggleForm()} 
-    />
+    <div className="footer-container">
+      <Button 
+        add 
+        onClick={() => toggleForm()} 
+      />
+    </div>
   )
 }
