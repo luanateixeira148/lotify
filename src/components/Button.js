@@ -7,6 +7,7 @@ import { faPen } from '@fortawesome/free-solid-svg-icons';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import { faCheck } from '@fortawesome/free-solid-svg-icons';
+import { faDirections } from '@fortawesome/free-solid-svg-icons';
 
 const classNames = require('classnames');
 
@@ -26,6 +27,9 @@ export default function Button(props) {
     if (props.save) {
       icon = <FontAwesomeIcon icon={faCheck} />;
     }
+    if (props.directions) {
+      icon = <FontAwesomeIcon icon={faDirections} />;
+    }
     return icon
   }
 
@@ -33,7 +37,8 @@ export default function Button(props) {
     "button--add": props.add,
     "button--delete": props.delete,
     "button--edit": props.edit,
-    "button--save": props.save
+    "button--save": props.save,
+    "button--directions": props.directions
   });
 
   return (
