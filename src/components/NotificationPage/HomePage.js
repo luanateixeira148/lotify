@@ -9,7 +9,7 @@ export default function HomePage (props) {
 
   return (
     <div className="home-page">
-      {/* <img src={homeScreen} alt="" /> */}
+      <img src="images/homescreen.png" alt="" />
     </div>
   )
 

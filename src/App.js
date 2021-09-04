@@ -37,26 +37,25 @@ function App() {
   }, [tasks])
   
   return (
-    <NotificationPage />
-    // <div className="App">
-    //   <Header 
-    //     bestRoute={bestRoute}
-    //   />
-    //   <Form 
-    //     setFormState={setFormState}
-    //     formState={formState}
-    //     setLoading={setLoading}
-    //   />
-    //   <TaskList
-    //     tasks={tasks}
-    //     setTasks={setTasks}
-    //     setLoading={setLoading}
-    //   />
-    //   <Footer
-    //     setFormState={setFormState}
-    //     formState={formState}
-    //   />
-    // </div>
+    <div className="App">
+      <Header 
+        bestRoute={bestRoute}
+      />
+      <Form 
+        setFormState={setFormState}
+        formState={formState}
+        setLoading={setLoading}
+      />
+      <TaskList
+        tasks={tasks}
+        setTasks={setTasks}
+        setLoading={setLoading}
+      />
+      <Footer
+        setFormState={setFormState}
+        formState={formState}
+      />
+    </div>
   );
 }
 

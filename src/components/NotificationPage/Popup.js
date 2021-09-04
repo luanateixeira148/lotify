@@ -1,31 +1,46 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-import socketio from 'socket.io';
+import io from 'socket.io-client';
 import "./styles.scss";
-const classNames = require('classnames');
 
 export default function Popup(props) {
 
-  const [message, setMessage] = useState('');
+  const [messages, setMessages] = useState([]);
 
-  const toggleMessage = () => {
-    message ? setMessage('') : setMessage('Hello There!');
-  }
+  const clear = function () {
+    setMessages([]);
+  };
 
-  // Websocket connection
+  useEffect(() => {
+    const socket = io("/");
 
-  // useEffect(() => {
-  //   const socket = socketio();
-  //   socket.on("connect", data => {
-  //     console.log(data)
-  //   });
-  // }, []);
+    socket.on('connect', event => {
+      console.log("connected");
+    });
 
-// build a page with message state (message, setMessage), make a button (clear/fill the state with some dummy data)
+    socket.on('public', msg => {
+      setMessages(prev => [msg, ...prev]);
+    });
+
+    // ensures we disconnect to avoid memory leaks
+    return () => socket.disconnect();
+  }, []);
+
+  console.log(messages);
+
   return (
-    <div>
-      <button onClick={toggleMessage}>MESSAGE</button>
-      {message.length > 0 && (<h2>{message}</h2>)}
-    </div>
-  )
+    <>
+      
+      {messages.length > 0 && (
+        <div className="popup-container">
+          <div className="popup-header">
+            <img src="images/shoppers.png" alt="" />
+            <h3>LOTIFY</h3>
+          </div>
+          <p><b>You have a location reminder!</b></p>
+          <p>{messages}</p>
+        </div>
+      )}
+
+    </>
+  );
 }

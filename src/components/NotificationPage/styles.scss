@@ -1,5 +1,58 @@
+h2 {
+  font-size: 16px;
+  font-weight: 500;
+  color: rgb(24, 24, 24);
+}
+
+h3 {
+  font-size: 14px;
+  font-weight: 500;
+  color: gray;
+}
+
+h4 {
+  font-size: 14px;
+  font-weight: 500;
+  color: gray;
+}
+
 .home-page {
-  background-color: hotpink;
+
   width: 414px;
   height: 736px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+
+}
+
+.popup-container {
+
+  position: fixed;
+  z-index: 2;
+  width: 378px;
+  left: 8px;
+  top: 280px;
+
+  display: flex;
+  flex-direction: column;
+
+  background-color: rgb(255, 255, 255);
+  border-radius: 15px;
+  padding: 10px;
+
+  .popup-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+
+    img {
+      height: 25px;
+      width: 25px;
+      border-radius: 15px;
+    }
+  }
+
 }
