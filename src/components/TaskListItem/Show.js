@@ -19,8 +19,8 @@ export default function Show(props) {
   return (
     
     <Swiper className="show"
-      onSlideChange={() => console.log('slide change')}
-      onSwiper={(swiper) => console.log(swiper)}
+      // onSlideChange={() => console.log('slide change')}
+      // onSwiper={(swiper) => console.log(swiper)}
       spaceBetween={0}
       slidesPerView={1}
       slidesOffsetAfter={-250}
