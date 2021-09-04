@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import "./styles.scss";
 import Button from "../Button";
 import axios from 'axios';
@@ -35,7 +35,7 @@ export default function Show(props) {
             <h3>{props.distance}km</h3>
             <a href={props.map_url} > 
               <FontAwesomeIcon icon={faMapMarkerAlt} />
-              </a>
+            </a>
           </div>
         </div>
       </SwiperSlide>

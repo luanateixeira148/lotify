@@ -11,6 +11,7 @@ export default function MainPage() {
   const [tasks, setTasks] = useState([]);
   const [loading, setLoading] = useState(false);
   const [bestRoute, setBestRoute] = useState([]);
+  const [fetchTasks, setFetchTasks] = useState(false);
 
   /* makes initial axios get request and sets initial tasks */
   useEffect(() => {
@@ -18,6 +19,7 @@ export default function MainPage() {
     .then(res => { 
       setTasks(res.data);  
       setLoading(false);
+      setFetchTasks(true);
     })
   }, [loading])
 
@@ -28,9 +30,13 @@ export default function MainPage() {
       setBestRoute(res.data);
     })
   }, [tasks])
-  
-  return (
-    <div className="App">
+  let displayObject;
+  //if condition for tasks
+  //LAZY LOADING
+  if(!fetchTasks) { //Initial Condition
+    displayObject = <h1>Fetching Data. Please wait...</h1>
+  } else {
+    displayObject = <>
       <Header 
         bestRoute={bestRoute}
       />
@@ -48,6 +54,14 @@ export default function MainPage() {
         setFormState={setFormState}
         formState={formState}
       />
+    </>
+  }
+
+  return (
+    <div className="App">
+      
+      {displayObject}
+      
     </div>
   );
 }
