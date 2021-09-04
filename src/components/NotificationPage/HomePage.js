@@ -4,7 +4,7 @@ import "./styles.scss";
 export default function HomePage (props) {
   return (
     <div className="home-page">
-      <img src="images/homescreen.png" alt="" />
+      <img src="images/homescreen2.png" alt="" />
     </div>
   )
 }
