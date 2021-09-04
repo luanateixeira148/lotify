@@ -63,6 +63,7 @@ export default function TaskList(props) {
             logo_url={task.logo_url}
             toggleCheckbox={toggleCheckbox}
             tasks={tasks}
+            task={task}
             setTasks={props.setTasks}
           />
         ))}

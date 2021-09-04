@@ -23,6 +23,8 @@ export default function Checked(props) {
       .delete(`http://localhost:8080/api/tasks/${id}`)
   }
 
+  console.log('++++', props)
+
   return (
     
     <Swiper className="checked"
@@ -47,7 +49,7 @@ export default function Checked(props) {
           </div>
 
           <div className="checked-distance-info">
-            <h3>10km</h3>
+            <h3>{props.task.distance}km</h3>
             <a href={props.map_url} > 
               <FontAwesomeIcon icon={faMapMarkerAlt} />
             </a>

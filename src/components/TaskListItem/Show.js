@@ -18,6 +18,8 @@ export default function Show(props) {
       .delete(`http://localhost:8080/api/tasks/${id}`)
   }
 
+  console.log('-----', props)
+
   return (
     <Swiper className="show"
       spaceBetween={0}
