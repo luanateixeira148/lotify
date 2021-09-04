@@ -2,10 +2,13 @@ import React from 'react';
 import "./styles.scss";
 import Button from "../Button";
 import axios from 'axios';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/swiper-bundle.css';
+
+/* Icons */
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
+import { faCheck } from '@fortawesome/free-solid-svg-icons';
 
 export default function Checked(props) {
   const deleteTask = (id) => {
@@ -21,22 +24,44 @@ export default function Checked(props) {
   }
 
   return (
-
-
-    <div className="checked">
-      <form >
-        <input type='checkbox' id='task-checkbox' checked={props.status} onChange={() => props.toggleCheckbox(props.id)} />
-      </form>
-      <label>
-        {props.description}
-      </label>
-      <FontAwesomeIcon icon={faMapMarkerAlt} />
-
-
-      <Button delete onClick={() => deleteTask(props.id)} />
-
-
-    </div>
     
+    <Swiper className="checked"
+      spaceBetween={0}
+      slidesPerView={1}
+      slidesOffsetAfter={-330}
+    >
+      <SwiperSlide>
+        <div className="checked-info-container">
+
+          <form className="checked-input-container">
+            <input type='checkbox' id='task-checkbox' checked={props.status} onChange={() => props.toggleCheckbox(props.id)} />
+            <span className="styled-checkbox">
+              <FontAwesomeIcon icon={faCheck} />
+            </span>
+          </form>
+
+          <div className="checked-location-info">
+            <label>
+              {props.description}
+            </label>
+          </div>
+
+          <div className="checked-distance-info">
+            <h3>10km</h3>
+            <a href={props.map_url} > 
+              <FontAwesomeIcon icon={faMapMarkerAlt} />
+            </a>
+          </div>
+
+        </div>
+      </SwiperSlide>
+
+      <SwiperSlide>
+        <div className="checked-button-container">
+          <Button delete onClick={() => deleteTask(props.id)} />
+        </div>
+      </SwiperSlide>
+
+    </Swiper>
   );
 }

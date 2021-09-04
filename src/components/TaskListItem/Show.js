@@ -26,7 +26,7 @@ export default function Show(props) {
     >
       <SwiperSlide>
         <div className="info-container">
-          <form className="iput-container">
+          <form className="input-container">
             <input type='checkbox' id='task-checkbox' checked={props.status} onChange={() => props.toggleCheckbox(props.id)} />
             <span className="styled-checkbox">
               <FontAwesomeIcon icon={faCheck} />
