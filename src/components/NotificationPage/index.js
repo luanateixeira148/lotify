@@ -7,7 +7,9 @@ export default function NotificationPage (props) {
 
   return (
     <>
-      <Popup />
+      <Popup 
+        onClick={props.onClick}
+      />
       <HomePage />
     </>
   )

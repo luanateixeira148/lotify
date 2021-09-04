@@ -14,13 +14,27 @@ import Slide from './components/TaskListItem/Slide';
 import NotificationPage from './components/NotificationPage';
 
 function App() {
+
+  const [visualMode, setVisualMode] = useState('notificationPage');
   
-  return (
-    <div className="App">
-      <MainPage />
-      {/* <NotificationPage /> */}
-    </div>
-  );
+  if (visualMode === 'notificationPage') {
+    return (
+      <div className="App">
+        <NotificationPage 
+          onClick={() => setVisualMode('mainPage')}
+        />
+      </div>
+    );
+  }
+
+  if (visualMode === 'mainPage') {
+    return (
+      <div className="App">
+        <MainPage />
+      </div>
+    );
+  }
+  
 }
 
 export default App;

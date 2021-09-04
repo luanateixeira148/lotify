@@ -31,7 +31,7 @@ export default function Popup(props) {
     <>
       
       {messages.length > 0 && (
-        <div className="popup-container">
+        <div className="popup-container" onClick={props.onClick} >
           <div className="popup-header">
             <img src="images/shoppers.png" alt="" />
             <h3>LOTIFY</h3>
