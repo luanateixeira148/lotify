@@ -58,7 +58,7 @@ h4 {
       border: solid 1px grey;
       border-radius: 4px;
       background-color: white;
-      color: grey;
+      color: white;
       padding: 5px;
     }
 
@@ -89,11 +89,9 @@ h4 {
         font-size: 25px;
       }
     }
-
   }
 
   .button-container {
-    // width: 140px;
     display: flex;
     flex-direction: row;
     margin-left: 0px;
@@ -116,7 +114,7 @@ h4 {
     display: flex;
     flex-direction: row;
     align-items: center;
-    height: 70px;
+    height: 60px;
     width: 395px;
 
     background: #FEFEFE;
@@ -128,7 +126,7 @@ h4 {
 
     .checked-input-container {
       height: 100%;
-      margin: 0 0 10px 10px;
+      margin: -18px 0 10px 10px;
     }
 
     /* hides the default checkbox */
@@ -152,7 +150,7 @@ h4 {
       margin: 0 30px 0 0px;
 
       label {
-        font-size: 18px;
+        font-size: 16px;
         padding-left: 5px;
         color: gray;
         text-decoration: line-through;
@@ -175,7 +173,6 @@ h4 {
   }
 
   .checked-button-container {
-    // width: 140px;
     display: flex;
     flex-direction: row;
     margin-left: 0px;
