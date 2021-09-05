@@ -7,7 +7,7 @@ import { faPen } from '@fortawesome/free-solid-svg-icons';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import { faCheck } from '@fortawesome/free-solid-svg-icons';
-import { faDirections } from '@fortawesome/free-solid-svg-icons';
+// import { faDirections } from '@fortawesome/free-solid-svg-icons';
 
 const classNames = require('classnames');
 
@@ -27,13 +27,10 @@ export default function Button(props) {
     if (props.save) {
       icon = <FontAwesomeIcon icon={faCheck} />;
     }
-    // This is for the checked task list item
+    // for checked task list item
     if (props.smallDelete) {
       icon = <FontAwesomeIcon icon={faTrash} />;
     }
-    // if (props.directions) {
-    //   icon = <FontAwesomeIcon icon={faDirections} />;
-    // }
     return icon
   }
 
@@ -62,8 +59,8 @@ export default function Button(props) {
     "button--delete": props.delete,
     "button--edit": props.edit,
     "button--save": props.save,
-    "button--small-delete": props.smallDelete,
-    "button--directions": props.directions
+    "button--small-delete": props.smallDelete
+    // "button--directions": props.directions
   });
 
   return (

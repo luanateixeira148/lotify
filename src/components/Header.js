@@ -1,6 +1,7 @@
 import React from 'react';
 import "./Header.scss";
 import Button from './Button';
+import BestRoute from './BestRoute';
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 // import { faDirections } from '@fortawesome/free-solid-svg-icons';
 {/* <style>
@@ -13,11 +14,11 @@ export default function Header(props) {
       <div className="wordmark">
         <h1>Lotify</h1>
       </div>
-      {/* <div className="best_route">
+      <div className="best_route">
         <a href={props.bestRoute} target="_blank" rel="noreferrer">
-          <Button directions />
+          <BestRoute directions />
         </a>
-      </div> */}
+      </div>
     </div>
   );
 }
