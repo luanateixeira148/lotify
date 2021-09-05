@@ -1,12 +1,6 @@
 import React from 'react';
 import "./Header.scss";
-import Button from './Button';
 import BestRoute from './BestRoute';
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-// import { faDirections } from '@fortawesome/free-solid-svg-icons';
-{/* <style>
-@import url('https://fonts.googleapis.com/css2?family=Kaisei+Tokumin&display=swap');
-</style> */}
 
 export default function Header(props) {
   return (
@@ -17,7 +11,7 @@ export default function Header(props) {
 
 
         <div className="best_route">
-          <a href={props.bestRoute} target="_blank" rel="noreferrer">
+          <a href={props.bestRoute} >
             <BestRoute directions />
           </a>
         </div>

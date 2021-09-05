@@ -20,7 +20,7 @@ export default function Show(props) {
 
   return (
     <Swiper className="show"
-      spaceBetween={0}
+      spaceBetween={1}
       slidesPerView={1}
       slidesOffsetAfter={-258}
     >

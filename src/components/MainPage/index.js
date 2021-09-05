@@ -30,7 +30,7 @@ export default function MainPage() {
     .then(res => { 
       setBestRoute(res.data);
     })
-  }, [tasks])
+  }, [fetchTasks])
   let displayObject;
   
   if(!fetchTasks) { //Initial Condition

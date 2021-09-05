@@ -26,7 +26,7 @@ export default function Checked(props) {
   return (
     
     <Swiper className="checked"
-      spaceBetween={0}
+      spaceBetween={1}
       slidesPerView={1}
       slidesOffsetAfter={-348}
     >
