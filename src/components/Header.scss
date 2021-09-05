@@ -1,13 +1,13 @@
 .header {
   display: flex;
   align-items: center;
-  justify-content: center;
+  // justify-content: center;
   width: 414px;
   height: 150px;
   background-image: radial-gradient(farthest-corner at 0 90%,#7247ff 20%,#00ffbe 100%);
 
   .wordmark {
-    margin-left: 90px;
+    margin-left: 150px;
     h1 {
       font-size: 35px;
       font-family: 'Kaisei Tokumin', serif;
@@ -19,7 +19,8 @@
   .best_route {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-end;
+    margin-left: 48px;
   }
 
 }

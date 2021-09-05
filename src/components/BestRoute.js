@@ -5,24 +5,24 @@ const classNames = require('classnames');
 
 export default function BestRoute(props) {
 
-  const renderText = function() {
-    let text;
-    if (props.directions) {
-      text = <h5>BEST ROUTE</h5>;
-    }
-    return text;
-  };
+  // const renderText = function() {
+  //   let text;
+  //   if (props.directions) {
+  //     text = <h5>BEST ROUTE</h5>;
+  //   }
+  //   return text;
+  // };
 
-  const bestRouteClass = classNames("bestRoute", {
-    "bestRoute": props.directions
-  });
+  // // const bestRouteClass = classNames("bestRoute", {
+  // //   "bestRoute": props.directions
+  // // });
 
   return (
     <button
-      className={bestRouteClass}
+      className="bestRoute"
       onClick={props.onClick}
     >
-      {renderText()}
+      BEST ROUTE
     </button>
   );
 }

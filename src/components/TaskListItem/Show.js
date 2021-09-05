@@ -22,7 +22,7 @@ export default function Show(props) {
     <Swiper className="show"
       spaceBetween={0}
       slidesPerView={1}
-      slidesOffsetAfter={-250}
+      slidesOffsetAfter={-258}
     >
       <SwiperSlide>
         <div className="info-container">

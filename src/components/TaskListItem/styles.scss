@@ -110,7 +110,7 @@ h4 {
   align-items: center;
   justify-content: center;
   width: 414px;
-  height: 80px;
+  height: 70px;
 
   .checked-info-container {
     display: flex;
@@ -124,12 +124,11 @@ h4 {
     box-sizing: border-box;
     border-radius: 6px;
     padding: 10px;
-    margin: 10px;
-    margin-bottom: 0;
+    margin: 10px 10px 0 10px;
 
     .checked-input-container {
       height: 100%;
-      margin: -8px 0 10px 10px;
+      margin: 0px 0 10px 10px;
     }
 
     /* hides the default checkbox */
@@ -229,7 +228,7 @@ h4 {
 
   .add-form-button-container {
     padding-left: 20px;
-    padding-right: 5px;
+    padding-right: 0;
   }
 
 }

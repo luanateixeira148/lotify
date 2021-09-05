@@ -49,6 +49,8 @@ export default function FormOnEdit(props) {
       .catch((err) => console.log(err))
   }
 
+  console.log('++++', props)
+
   return (
     <div className="form">
       <form>
@@ -65,7 +67,9 @@ export default function FormOnEdit(props) {
         <div className="dropdown">
             <Select
               styles={customStyles}
-              defaultValue={location}
+              defaultInputValue={location}
+              
+              // defaultValue={location}
               onChange={setLocation}
               options={options}
               placeholder="Add location"
