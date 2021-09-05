@@ -11,14 +11,17 @@ import BestRoute from './BestRoute';
 export default function Header(props) {
   return (
     <div className="header">
-      <div className="wordmark">
-        <h1>Lotify</h1>
-      </div>
-      <div className="best_route">
-        <a href={props.bestRoute} target="_blank" rel="noreferrer">
-          <BestRoute directions />
-        </a>
-      </div>
+        <div className ="wordmark">
+          <h1>Lotify</h1>
+        </div>
+
+
+        <div className="best_route">
+          <a href={props.bestRoute} target="_blank" rel="noreferrer">
+            <BestRoute directions />
+          </a>
+        </div>
+      
     </div>
   );
 }
