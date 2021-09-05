@@ -30,10 +30,24 @@ export default function Button(props) {
     // if (props.directions) {
     //   icon = <FontAwesomeIcon icon={faDirections} />;
     // }
-    if (props.directions) {
-      <h3>BEST ROUTE</h3>
-    }
     return icon
+  }
+
+  const includeText = function() {
+    let text;
+    if (props.delete) {
+      text = <h5>DELETE</h5>;
+    }
+    if (props.edit) {
+      text = <h5>EDIT</h5>;
+    }
+    if (props.save) {
+      text = <h5>SAVE</h5>;
+    }
+    if (props.directions) {
+      text = <h5>BEST ROUTE</h5>;
+    }
+    return text;
   }
 
   const buttonClass = classNames("button", {
@@ -50,6 +64,7 @@ export default function Button(props) {
       onClick={props.onClick}
     >
       {includeIcon()}
+      {includeText()}
     </button>
   );
 }

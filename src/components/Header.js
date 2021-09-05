@@ -3,6 +3,9 @@ import "./Header.scss";
 import Button from './Button';
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 // import { faDirections } from '@fortawesome/free-solid-svg-icons';
+{/* <style>
+@import url('https://fonts.googleapis.com/css2?family=Kaisei+Tokumin&display=swap');
+</style> */}
 
 export default function Header(props) {
   return (
