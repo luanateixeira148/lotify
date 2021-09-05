@@ -4,6 +4,7 @@ import Form from '../TaskListItem/Form';
 import Header from '../Header';
 import TaskList from '../TaskList';
 import Footer from '../Footer';
+import "./styles.scss";
 
 export default function MainPage() {
 
@@ -31,10 +32,12 @@ export default function MainPage() {
     })
   }, [tasks])
   let displayObject;
-  //if condition for tasks
-  //LAZY LOADING
+  
   if(!fetchTasks) { //Initial Condition
-    displayObject = <h1>Fetching Data. Please wait...</h1>
+    displayObject = 
+    <div className="loading-screen">
+      <h1>LOGO</h1>
+    </div>
   } else {
     displayObject = <>
       <Header 
