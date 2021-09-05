@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import io from 'socket.io-client';
 import "./styles.scss";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTimes } from '@fortawesome/free-solid-svg-icons';
+import { faClipboardList } from '@fortawesome/free-solid-svg-icons';
+import { faEllipsisH } from '@fortawesome/free-solid-svg-icons';
 
 export default function Popup(props) {
 
@@ -24,13 +28,29 @@ export default function Popup(props) {
   return (
     <> 
       {messages.length > 0 && (
-        <div className="popup-container" onClick={props.onClick} >
-          <div className="popup-header">
-            <img src="images/shoppers.png" alt="" />
-            <h3>LOTIFY</h3>
+        <div className="popup">
+          <div className="popup-close-header">
+            <div className="popup-close-button">
+              <FontAwesomeIcon icon={faTimes} />
+            </div>
           </div>
-          <p><b>You have a location reminder!</b></p>
-          <p>{messages}</p>
+          <div className="popup-container" onClick={props.onClick}>
+            <div className="popup-header">
+              <div className="header-left">
+                <div className="header-logo">
+                  <FontAwesomeIcon icon={faClipboardList} />
+                </div>
+                <h3>LOTIFY</h3>
+              </div>
+              <div className="header-right">
+                <FontAwesomeIcon icon={faEllipsisH} />
+              </div>
+            </div>
+            <div className="popup-body">
+              <p><b>You have a Lotify reminder!</b></p>
+              <p>{messages}</p>
+            </div>
+          </div>
         </div>
       )}
     </>
