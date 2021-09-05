@@ -10,6 +10,13 @@ export default function FormOnEdit(props) {
   const [location, setLocation] = useState(props.location);
   const [locations, setLocations] = useState([]);
 
+  /* Styles the React Select Component */
+  const customStyles = {
+    control: (_, { selectProps: { border }}) => ({
+      border: border
+    }),
+  }
+
   /* Makes get request and sets locations to be shown on the dropdown menu */
   useEffect(() => {
     axios.get("http://localhost:8080/api/locations")
@@ -57,13 +64,19 @@ export default function FormOnEdit(props) {
         />
         <div className="dropdown">
             <Select
+              styles={customStyles}
               defaultValue={location}
               onChange={setLocation}
               options={options}
+              placeholder="Add location"
+              components={{ DropdownIndicator:() => null, IndicatorSeparator:() => null }}
+              openMenuOnClick={false}
             />
           </div>
       </form>
-      <Button save onClick={() => editTask()} />
+      <div className="add-form-button-container">
+        <Button save onClick={() => editTask()} />
+      </div>
     </div>
   );
 }
