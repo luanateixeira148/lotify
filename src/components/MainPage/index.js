@@ -36,7 +36,7 @@ export default function MainPage() {
   if(!fetchTasks) { //Initial Condition
     displayObject = 
     <div className="loading-screen">
-      <h1>LOGO</h1>
+      <h1>Lotify</h1>
     </div>
   } else {
     displayObject = <>

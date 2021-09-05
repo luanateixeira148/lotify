@@ -58,7 +58,7 @@ export default function Checked(props) {
 
       <SwiperSlide>
         <div className="checked-button-container">
-          <Button delete className="checked-delete-button" onClick={() => deleteTask(props.id)} />
+          <Button smallDelete className="checked-delete-button" onClick={() => deleteTask(props.id)} />
         </div>
       </SwiperSlide>
 

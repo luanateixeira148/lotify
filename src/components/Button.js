@@ -27,6 +27,10 @@ export default function Button(props) {
     if (props.save) {
       icon = <FontAwesomeIcon icon={faCheck} />;
     }
+    // This is for the checked task list item
+    if (props.smallDelete) {
+      icon = <FontAwesomeIcon icon={faTrash} />;
+    }
     // if (props.directions) {
     //   icon = <FontAwesomeIcon icon={faDirections} />;
     // }
@@ -44,6 +48,9 @@ export default function Button(props) {
     if (props.save) {
       text = <h5>SAVE</h5>;
     }
+    if (props.smallDelete) {
+      text = <h5>DELETE</h5>;
+    }
     if (props.directions) {
       text = <h5>BEST ROUTE</h5>;
     }
@@ -55,6 +62,7 @@ export default function Button(props) {
     "button--delete": props.delete,
     "button--edit": props.edit,
     "button--save": props.save,
+    "button--small-delete": props.smallDelete,
     "button--directions": props.directions
   });
 

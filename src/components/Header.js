@@ -13,11 +13,11 @@ export default function Header(props) {
       <div className="wordmark">
         <h1>Lotify</h1>
       </div>
-      <div className="best_route">
+      {/* <div className="best_route">
         <a href={props.bestRoute} target="_blank" rel="noreferrer">
           <Button directions />
         </a>
-      </div>
+      </div> */}
     </div>
   );
 }
