@@ -25,15 +25,8 @@ export default function Popup(props) {
     return () => socket.disconnect();
   }, []);
 
-  return (
-    <> 
-      {messages.length > 0 && (
-        <div className="popup">
-          <div className="popup-close-header">
-            <div className="popup-close-button">
-              <FontAwesomeIcon icon={faTimes} />
-            </div>
-          </div>
+  const list = messages.map((message, i) => {
+    return <li key={i} className="popup">
           <div className="popup-container" onClick={props.onClick}>
             <div className="popup-header">
               <div className="header-left">
@@ -48,11 +41,15 @@ export default function Popup(props) {
             </div>
             <div className="popup-body">
               <p><b>You have a Lotify reminder!</b></p>
-              <p>{messages}</p>
+              <p>{message}</p>
             </div>
           </div>
-        </div>
-      )}
-    </>
+    </li>;
+  });
+
+  return (
+      <ul className="popup-list">
+          {list}
+      </ul>
   );
 }
