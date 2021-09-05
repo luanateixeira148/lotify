@@ -76,7 +76,9 @@ export default function Form(props) {
             />
           </div>
         </form>
-        <Button save onClick={() => addTask()} />
+        <div className="add-form-button-container">
+          <Button save onClick={() => addTask()} />
+        </div>
       </div>
     );
   } else {

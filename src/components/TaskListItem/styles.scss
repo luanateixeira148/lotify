@@ -190,23 +190,26 @@ h4 {
   align-items: center;
 
   width: 394px;
+  height: 80px;
   background: #FEFEFE;
   border: 1px solid #6b6b50;
   box-sizing: border-box;
   border-radius: 6px;
   margin: 10px 10px 0 10px;
-  padding: 15px;
+  padding-left: 15px;
 
   form {
     display: flex;
     flex-direction: column;
     width: 300px;
+    padding: 0;
 
     input.description {
       outline: 0;
-      border-width: 0 0 2px;
+      border-width: 0 0 1px;
       border-color: gray;
       font-size: 16px;
+      padding: 7px 10px 5px 10px;
     }
 
     input.description:focus {
@@ -219,6 +222,11 @@ h4 {
       border-color: gray;
     }
 
+  }
+
+  .add-form-button-container {
+    padding-left: 20px;
+    padding-right: 5px;
   }
 
 }
