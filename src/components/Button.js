@@ -6,7 +6,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPen } from '@fortawesome/free-solid-svg-icons';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
-import { faPlusCircle } from '@fortawesome/free-solid-svg-icons';
 import { faCheck } from '@fortawesome/free-solid-svg-icons';
 import { faDirections } from '@fortawesome/free-solid-svg-icons';
 
@@ -17,7 +16,7 @@ export default function Button(props) {
   const includeIcon = function() {
     let icon;
     if (props.add) {
-      icon = <FontAwesomeIcon icon={faPlusCircle} />;
+      icon = <FontAwesomeIcon icon={faPlus} />;
     }
     if (props.delete) {
       icon = <FontAwesomeIcon icon={faTrash} />;
