@@ -27,8 +27,11 @@ export default function Button(props) {
     if (props.save) {
       icon = <FontAwesomeIcon icon={faCheck} />;
     }
+    // if (props.directions) {
+    //   icon = <FontAwesomeIcon icon={faDirections} />;
+    // }
     if (props.directions) {
-      icon = <FontAwesomeIcon icon={faDirections} />;
+      <h3>BEST ROUTE</h3>
     }
     return icon
   }

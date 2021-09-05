@@ -36,6 +36,21 @@
 // }
 
 .button--directions {
-  background-color: transparent;
-  color: #1FA5DE;
+  background-color: #e8e8e8; 
+  border-radius: 5px;
+  border: none;
+  height: 25px;
+  width: 70px;
+  margin: 10px 7px 10px 0;
+  font-size: 25px; /* defines the icon size */
+  font-family: Arial, Helvetica, sans-serif;
+  color: #7247FF; /* defines the icon color */
+  font-weight: 900;
+}
+
+h3 {
+  font-size: 25px; /* defines the icon size */
+  font-family: Arial, Helvetica, sans-serif;
+  color: #7247FF; /* defines the icon color */
+  font-weight: 900;
 }
