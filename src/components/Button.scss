@@ -10,10 +10,12 @@
 
 .button--add {
   border-radius: 50%;
-  height: 80px;
-  width: 80px;
-  background-color: #FCBC40;
-  font-size: 50px; /* defines the icon size */
+  height: 100px;
+  width: 100px;
+  color: #FCBC40;
+  font-size: 100px; /* defines the icon size */
+  padding: 0;
+  padding-top: -15px;
 }
 
 .button--delete {
