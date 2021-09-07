@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './App.scss';
-import MainPage from './components/MainPage';
+import ApplicationPage from './components/ApplicationPage';
 import NotificationPage from './components/NotificationPage';
 
 function App() {
@@ -21,7 +21,7 @@ function App() {
   if (visualMode === 'mainPage') {
     return (
       <div className="App">
-        <MainPage />
+        <ApplicationPage />
       </div>
     );
   }

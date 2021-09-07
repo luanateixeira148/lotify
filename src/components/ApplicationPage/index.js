@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import "./application-page.scss";
 import Form from '../TaskListItem/Form';
 import Header from '../Header';
 import TaskList from '../TaskList';
 import Footer from '../Footer';
-import "./styles.scss";
 
 export default function MainPage() {
 
