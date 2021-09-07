@@ -10,8 +10,8 @@ export default function Header(props) {
         </div>
 
         <div className="best_route">
-          {/* <a href={props.bestRoute} target="_blank" rel="noreferrer"> */}
-          <a href={props.bestRoute}>
+          <a href={props.bestRoute} target="_blank" rel="noreferrer">
+          {/* <a href={props.bestRoute}> */}
             <BestRoute directions />
           </a>
         </div>
