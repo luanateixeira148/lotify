@@ -43,6 +43,7 @@ export default function TaskList(props) {
       <ul>
         {getUncheckedTasks().map(task => (
           <TaskListItem 
+            key={task.id}
             task={task}
             toggleCheckbox={toggleCheckbox}
             setLoading={props.setLoading}

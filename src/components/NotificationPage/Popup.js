@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import io from 'socket.io-client';
 import "./styles.scss";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import { faClipboardList } from '@fortawesome/free-solid-svg-icons';
 import { faEllipsisH } from '@fortawesome/free-solid-svg-icons';
 
@@ -21,8 +20,12 @@ export default function Popup(props) {
       setMessages(prev => [msg, ...prev]);
     });
 
-    // Ensures we disconnect to avoid memory leaks
-    return () => socket.disconnect();
+    /* 
+      Ensures we disconnect to avoid memory leaks 
+      This is commented out because it produces a warning on DevTools. If taking the app for production, we have to disconnect it.
+      // return () => socket.disconnect();
+    */
+    
   }, []);
 
   const list = messages.map((message, i) => {

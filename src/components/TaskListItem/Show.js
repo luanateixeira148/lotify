@@ -12,7 +12,6 @@ import { faCheck } from '@fortawesome/free-solid-svg-icons';
 
 export default function Show(props) {
   const deleteTask = (id) => {
-    console.log('delete button was clicked');
     props.setEdit('deleted')
     return axios
       .delete(`http://localhost:8080/api/tasks/${id}`)
