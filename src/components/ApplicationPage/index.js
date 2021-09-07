@@ -10,7 +10,7 @@ export default function MainPage() {
 
   const [formState, setFormState] = useState('hide');
   const [tasks, setTasks] = useState([]);
-  const [loading, setLoading] = useState(false);
+  const [reaload, setReload] = useState(false);
   const [bestRoute, setBestRoute] = useState([]);
   const [fetchTasks, setFetchTasks] = useState(false);
 
@@ -19,10 +19,10 @@ export default function MainPage() {
     axios.get("http://localhost:8080/api/tasks")
     .then(res => { 
       setTasks(res.data);  
-      setLoading(false);
+      setReload(false);
       setFetchTasks(true);
     })
-  }, [loading])
+  }, [reaload])
 
   /* makes axios get request to set the right Google Maps URL for the best route button */
   useEffect(() => {
@@ -31,10 +31,11 @@ export default function MainPage() {
       setBestRoute(res.data);
     })
   }, [fetchTasks])
-  
+
+  /* show loading page while the tasks are being requested */
   let displayObject;
   
-  if(!fetchTasks) { //Initial Condition
+  if(!fetchTasks) {
     displayObject = 
     <div className="loading-screen">
       <h1>Lotify</h1>
@@ -47,12 +48,12 @@ export default function MainPage() {
       <Form 
         setFormState={setFormState}
         formState={formState}
-        setLoading={setLoading}
+        setLoading={setReload}
       />
       <TaskList
         tasks={tasks}
         setTasks={setTasks}
-        setLoading={setLoading}
+        setLoading={setReload}
       />
       <Footer
         setFormState={setFormState}
