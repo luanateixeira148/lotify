@@ -1,31 +1,30 @@
 import React, { useState, useEffect } from 'react';
 import io from 'socket.io-client';
-import "./styles.scss";
+import "./notification-page.scss";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import { faClipboardList } from '@fortawesome/free-solid-svg-icons';
 import { faEllipsisH } from '@fortawesome/free-solid-svg-icons';
 
 export default function Popup(props) {
 
-  const [messages, setMessages] = useState([]);
+  const [notifications, setNotifications] = useState([]);
 
+  /* makes connection with socket.io to receive the notification */
   useEffect(() => {
     const socket = io("/");
-
     socket.on('connect', event => {
       console.log("socket.io is connected");
     });
 
-    socket.on('public', msg => {
-      setMessages(prev => [msg, ...prev]);
+    socket.on('public', notification => {
+      setNotifications(prev => [notification, ...prev]);
     });
 
-    // Ensures we disconnect to avoid memory leaks
+    /* Ensures we disconnect to avoid memory leaks */
     return () => socket.disconnect();
   }, []);
 
-  const list = messages.map((message, i) => {
+  const listOfNotifications = notifications.map((notification, i) => {
     return <li key={i} className="popup">
           <div className="popup-container" onClick={props.onClick}>
             <div className="popup-header">
@@ -41,7 +40,7 @@ export default function Popup(props) {
             </div>
             <div className="popup-body">
               <p><b>You have a Lotify reminder!</b></p>
-              <p>{message}</p>
+              <p>{notification}</p>
             </div>
           </div>
     </li>;
@@ -49,7 +48,7 @@ export default function Popup(props) {
 
   return (
       <ul className="popup-list">
-          {list}
+          {listOfNotifications}
       </ul>
   );
 }

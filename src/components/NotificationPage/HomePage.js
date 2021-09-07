@@ -1,7 +1,7 @@
 import React from 'react';
-import "./styles.scss";
+import "./notification-page.scss";
 
-export default function HomePage (props) {
+export default function HomePage () {
   return (
     <div className="home-page">
       <img src="images/homescreen2.png" alt="" />

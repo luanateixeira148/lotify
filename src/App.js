@@ -1,10 +1,11 @@
-import './App.scss';
 import React, { useState } from 'react';
+import './App.scss';
 import MainPage from './components/MainPage';
 import NotificationPage from './components/NotificationPage';
 
 function App() {
 
+  /* useState to toggle between notification and application pages */
   const [visualMode, setVisualMode] = useState('notificationPage');
   
   if (visualMode === 'notificationPage') {

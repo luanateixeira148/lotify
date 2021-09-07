@@ -13,7 +13,7 @@ import { faCheck } from '@fortawesome/free-solid-svg-icons';
 export default function Checked(props) {
   const deleteTask = (id) => {
     let output = [];
-    props.tasks.map(task => {
+    props.tasks.map((task) => {
       if (task.id !== id) {
         output.push(task)
       }
