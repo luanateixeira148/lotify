@@ -65,8 +65,7 @@ export default function FormOnEdit(props) {
         <div className="dropdown">
             <Select
               styles={customStyles}
-              // defaultInputValue={location}
-              defaultValue={location}
+              defaultInputValue={location}
               onChange={setLocation}
               options={options}
               placeholder="Add location"
