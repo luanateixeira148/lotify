@@ -31,9 +31,10 @@ export default function MainPage() {
       setBestRoute(res.data);
     })
   }, [fetchTasks])
+
+  /* displayObject changes based on the axios request: if still processing, it displays a loading page */
   let displayObject;
-  
-  if(!fetchTasks) { //Initial Condition
+  if(!fetchTasks) {
     displayObject = 
     <div className="loading-screen">
       <h1>Lotify</h1>
