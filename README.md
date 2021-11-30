@@ -15,7 +15,7 @@ Client-side and server-side are set in separate Git Repositories. This is the cl
 
 ### Front-end
 
-npm install/
+npm install\
 npm start
 
 ### Dependencies
