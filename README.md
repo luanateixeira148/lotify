@@ -20,11 +20,11 @@ npm start
 
 ### Dependencies
 
-FontsAwesome
-Axios
-classnames
-React
-React-select
-SASS
-socket-io
+FontsAwesome\
+Axios\
+classnames\
+React\
+React-select\
+SASS\
+socket-io\
 Swiper
